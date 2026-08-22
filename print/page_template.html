@@ -1,0 +1,407 @@
+<title>Twin-Cable Brake Drum — TD-8130MG</title>
+
+<style>
+  :root{
+    --paper:#F1F3F5; --surface:#FFFFFF; --ink:#12171C; --muted:#59646E;
+    --rule:#C8CFD5; --hair:#DDE2E6; --accent:#B81E2A; --accent-ink:#B81E2A;
+    --accent-soft:rgba(184,30,42,.09); --part:#79858F; --viewport:#12151A;
+    --warn:#8A6410;
+  }
+  @media (prefers-color-scheme:dark){
+    :root{
+      --paper:#0D1114; --surface:#161B21; --ink:#E2E8ED; --muted:#8D99A4;
+      --rule:#2A333B; --hair:#222A31; --accent:#E8535D; --accent-ink:#E8535D;
+      --accent-soft:rgba(232,83,93,.12); --part:#98A4AF; --viewport:#0A0D10;
+      --warn:#D3A63F;
+    }
+  }
+  :root[data-theme="dark"]{
+    --paper:#0D1114; --surface:#161B21; --ink:#E2E8ED; --muted:#8D99A4;
+    --rule:#2A333B; --hair:#222A31; --accent:#E8535D; --accent-ink:#E8535D;
+    --accent-soft:rgba(232,83,93,.12); --part:#98A4AF; --viewport:#0A0D10;
+    --warn:#D3A63F;
+  }
+  :root[data-theme="light"]{
+    --paper:#F1F3F5; --surface:#FFFFFF; --ink:#12171C; --muted:#59646E;
+    --rule:#C8CFD5; --hair:#DDE2E6; --accent:#B81E2A; --accent-ink:#B81E2A;
+    --accent-soft:rgba(184,30,42,.09); --part:#79858F; --viewport:#12151A;
+    --warn:#8A6410;
+  }
+
+  body{
+    margin:0; background:var(--paper); color:var(--ink);
+    font-family:"Segoe UI",system-ui,-apple-system,"Helvetica Neue",Arial,sans-serif;
+    font-size:16px; line-height:1.6; -webkit-font-smoothing:antialiased;
+  }
+  .sheet{max-width:1120px; margin:0 auto; padding:0 24px 96px;}
+
+  .disp{font-family:"Arial Narrow","Helvetica Neue Condensed","Liberation Sans Narrow",Arial,sans-serif;}
+  .mono{font-family:"Cascadia Mono",Consolas,"SF Mono",ui-monospace,"Liberation Mono",monospace;
+        font-variant-numeric:tabular-nums;}
+
+  /* ---------- title block ---------- */
+  .titleblock{border-bottom:2px solid var(--ink); padding:44px 0 18px; margin-bottom:34px;}
+  .eyebrow{font-family:"Cascadia Mono",Consolas,ui-monospace,monospace;
+    font-size:11px; letter-spacing:.20em; text-transform:uppercase; color:var(--muted); margin:0 0 14px;}
+  h1{
+    font-family:"Arial Narrow","Helvetica Neue Condensed","Liberation Sans Narrow",Arial,sans-serif;
+    font-weight:700; text-transform:uppercase; letter-spacing:.045em;
+    font-size:clamp(34px,6.2vw,60px); line-height:1.02; margin:0 0 16px; text-wrap:balance;
+  }
+  .standfirst{max-width:62ch; color:var(--muted); font-size:17px; margin:0 0 26px;}
+  .standfirst strong{color:var(--ink); font-weight:600;}
+
+  .fields{display:grid; grid-template-columns:repeat(auto-fit,minmax(132px,1fr)); gap:1px;
+    background:var(--rule); border:1px solid var(--rule);}
+  .field{background:var(--surface); padding:9px 12px;}
+  .field dt{font-family:"Cascadia Mono",Consolas,ui-monospace,monospace; font-size:10px;
+    letter-spacing:.16em; text-transform:uppercase; color:var(--muted); margin:0 0 3px;}
+  .field dd{margin:0; font-family:"Cascadia Mono",Consolas,ui-monospace,monospace;
+    font-size:14px; font-variant-numeric:tabular-nums;}
+
+  /* ---------- sections ---------- */
+  section{margin-top:58px;}
+  h2{
+    font-family:"Arial Narrow","Helvetica Neue Condensed","Liberation Sans Narrow",Arial,sans-serif;
+    font-weight:700; text-transform:uppercase; letter-spacing:.10em;
+    font-size:22px; margin:0 0 6px; padding-bottom:8px; border-bottom:1px solid var(--rule);
+    display:flex; align-items:baseline; gap:12px;
+  }
+  h2 .num{font-family:"Cascadia Mono",Consolas,ui-monospace,monospace; font-size:12px;
+    color:var(--accent-ink); letter-spacing:.1em;}
+  .lede{color:var(--muted); max-width:64ch; margin:14px 0 24px;}
+
+  /* ---------- viewports ---------- */
+  .views{display:grid; grid-template-columns:repeat(auto-fit,minmax(260px,1fr)); gap:16px;}
+  figure{margin:0; background:var(--viewport); border:1px solid var(--rule); overflow:hidden;}
+  figure img{display:block; width:100%; height:auto;}
+  figcaption{
+    font-family:"Cascadia Mono",Consolas,ui-monospace,monospace; font-size:11px;
+    letter-spacing:.11em; text-transform:uppercase; color:#98A4AF;
+    padding:9px 12px; border-top:1px solid rgba(255,255,255,.10);
+  }
+  .views figure.wide{grid-column:1/-1;}
+
+  /* ---------- section drawing ---------- */
+  .drawing{display:grid; grid-template-columns:minmax(0,1.55fr) minmax(200px,.95fr); gap:32px; align-items:start;}
+  .svgwrap{background:var(--surface); border:1px solid var(--rule); padding:18px; overflow-x:auto;}
+  .svgwrap svg{display:block; width:100%; min-width:440px; height:auto;}
+  .key{list-style:none; margin:0; padding:0; display:flex; flex-direction:column; gap:14px;}
+  .key li{display:grid; grid-template-columns:26px 1fr; gap:11px; align-items:start; font-size:14.5px;}
+  .key b{
+    display:grid; place-items:center; width:22px; height:22px; border-radius:50%;
+    background:var(--accent); color:#fff; font-size:12px; font-weight:700;
+    font-family:"Cascadia Mono",Consolas,ui-monospace,monospace;
+  }
+  .key span{color:var(--muted);}
+  .key span em{font-style:normal; color:var(--ink);}
+
+  /* ---------- tables ---------- */
+  .tablewrap{overflow-x:auto; border:1px solid var(--rule); background:var(--surface);}
+  table{border-collapse:collapse; width:100%; font-size:14.5px;}
+  th,td{padding:10px 14px; text-align:left; border-bottom:1px solid var(--hair);}
+  thead th{
+    font-family:"Cascadia Mono",Consolas,ui-monospace,monospace; font-size:10.5px;
+    letter-spacing:.15em; text-transform:uppercase; color:var(--muted);
+    border-bottom:1px solid var(--rule); font-weight:400;
+  }
+  tbody tr:last-child td{border-bottom:none;}
+  td.n{font-family:"Cascadia Mono",Consolas,ui-monospace,monospace;
+    font-variant-numeric:tabular-nums; white-space:nowrap;}
+  tr.flag td{background:var(--accent-soft); font-weight:600;}
+  tr.flag td.n{color:var(--accent-ink);}
+
+  .cols{display:grid; grid-template-columns:repeat(auto-fit,minmax(300px,1fr)); gap:32px;}
+
+  /* ---------- steps ---------- */
+  ol.steps{list-style:none; counter-reset:s; margin:0; padding:0;
+    display:flex; flex-direction:column; gap:0;}
+  ol.steps li{counter-increment:s; display:grid; grid-template-columns:44px 1fr; gap:16px;
+    padding:16px 0; border-bottom:1px solid var(--hair);}
+  ol.steps li:last-child{border-bottom:none;}
+  ol.steps li::before{
+    content:counter(s,decimal-leading-zero);
+    font-family:"Cascadia Mono",Consolas,ui-monospace,monospace; font-size:13px;
+    color:var(--accent-ink); padding-top:2px;
+  }
+  ol.steps strong{display:block; margin-bottom:2px;}
+  ol.steps p{margin:0; color:var(--muted); font-size:14.5px;}
+
+  /* ---------- callout ---------- */
+  .note{border-left:3px solid var(--accent); background:var(--accent-soft);
+    padding:16px 20px; margin:24px 0 0;}
+  .note p{margin:0 0 8px;} .note p:last-child{margin:0;}
+  .note .hd{
+    font-family:"Cascadia Mono",Consolas,ui-monospace,monospace; font-size:10.5px;
+    letter-spacing:.16em; text-transform:uppercase; color:var(--accent-ink); margin-bottom:8px;
+  }
+  .warn{border-left-color:var(--warn); background:transparent; border-left-width:3px;}
+  .warn .hd{color:var(--warn);}
+
+  ul.plain{margin:0; padding-left:18px; color:var(--muted);}
+  ul.plain li{margin-bottom:7px;}
+  ul.plain strong{color:var(--ink); font-weight:600;}
+  code{font-family:"Cascadia Mono",Consolas,ui-monospace,monospace; font-size:13.5px;
+    background:var(--hair); padding:1px 5px; border-radius:2px;}
+
+  footer{margin-top:70px; padding-top:16px; border-top:2px solid var(--ink);
+    display:flex; flex-wrap:wrap; gap:8px 28px;
+    font-family:"Cascadia Mono",Consolas,ui-monospace,monospace;
+    font-size:11px; letter-spacing:.12em; text-transform:uppercase; color:var(--muted);}
+
+  @media (max-width:760px){
+    .drawing{grid-template-columns:1fr;}
+    .titleblock{padding-top:32px;}
+  }
+</style>
+
+<div class="sheet">
+
+  <header class="titleblock">
+    <p class="eyebrow">Printed part · Servo actuator · Rev B · 21 Jul 2026 · Sliced, ready to print</p>
+    <h1>Twin-cable brake drum</h1>
+    <p class="standfirst">A printed drum that sits on a <strong>TD-8130MG</strong> servo and pulls
+      <strong>two bicycle brake cables at once, equally</strong>. One turn of the servo, 70&nbsp;mm of
+      cable. The stock star horn is swallowed inside it, so the servo's factory spline takes the
+      torque and no printed plastic ever touches the shaft.</p>
+
+    <dl class="fields">
+      <div class="field"><dt>Outside Ø</dt><dd>47.36 mm</dd></div>
+      <div class="field"><dt>Height</dt><dd>19.50 mm</dd></div>
+      <div class="field"><dt>Stroke</dt><dd>70 mm</dd></div>
+      <div class="field"><dt>Sweep</dt><dd>180°</dd></div>
+      <div class="field"><dt>Print time</dt><dd>3 h 35 m</dd></div>
+      <div class="field"><dt>Filament</dt><dd>26 g PLA</dd></div>
+    </dl>
+
+    <div class="note">
+      <p class="hd">Rev B — the slicer caught two things I got wrong</p>
+      <p><strong>Square grooves became 90° V-sheaves.</strong> A square channel left a 3&nbsp;mm ledge
+        hanging in mid-air above each groove, all the way around — the slicer called it a collapsing
+        overhang and it would have drooped. V-walls at 45° hold themselves up, and the cable now
+        self-centres at exactly the design radius.</p>
+      <p><strong>The centre bore grew to Ø14.5 and runs straight through.</strong> The old Ø9 bore
+        left a thin unsupported ring at the pocket ceiling with nothing under it to print onto.
+        Matching the bore to the horn boss removes the ring entirely.</p>
+      <p>Both parts now slice with <strong>zero support warnings</strong>.</p>
+    </div>
+  </header>
+
+  <section>
+    <h2><span class="num">01</span> The part</h2>
+    <p class="lede">Two stacked V-sheaves, two nipple pockets 180° apart, four retaining slots, and a
+      star-shaped pocket underneath. Mesh verified watertight, single shell, zero non-manifold edges.</p>
+    <div class="views">
+      <figure><img src="__IMG_TOP__" alt="Three-quarter view of the drum from above, showing two cable grooves around the rim, four radial retaining slots, the central bore and two nipple holes.">
+        <figcaption>Top ¾ — grooves, nipple pockets, retaining slots</figcaption></figure>
+      <figure><img src="__IMG_BOTTOM__" alt="View of the underside showing a four-arm star-shaped pocket that receives the servo horn.">
+        <figcaption>Underside — the star pocket that grips the horn</figcaption></figure>
+      <figure><img src="__IMG_SECTION__" alt="Half of the drum cut away, showing the two grooves in cross section and a nipple bore running down from the top face.">
+        <figcaption>Half cut away — how deep the pockets run</figcaption></figure>
+      <figure><img src="__IMG_COUPON__" alt="A thin test coupon containing only the star-shaped horn pocket.">
+        <figcaption>Fit coupon — print this one first</figcaption></figure>
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="num">02</span> Section through the cable plane</h2>
+    <p class="lede">Cut vertically through both nipple pockets. Note the asymmetry — it is
+      deliberate. The right-hand nipple feeds the <em>lower</em> groove, the left-hand one feeds the
+      <em>upper</em> groove, so the two cable tensions sit on opposite sides of the shaft and cancel
+      instead of adding.</p>
+
+    <div class="drawing">
+      <div class="svgwrap">
+        <svg viewBox="-64 -52 604 320" role="img"
+             aria-label="Vertical cross-section of the drum, 47.36 mm wide and 19.5 mm tall, showing two V-shaped rim sheaves, two nipple bores of different depths, the Ø14.5 centre bore, and the horn pocket shown as a hidden dashed outline.">
+          <line x1="236.8" y1="-44" x2="236.8" y2="222" stroke="var(--rule)"
+                stroke-width="1" stroke-dasharray="14 5 3 5"/>
+
+          <!-- solid material, then the voids painted back in the card colour -->
+          <rect x="0" y="0" width="473.63" height="195" fill="var(--part)"/>
+          <g fill="var(--surface)">
+            <rect x="164.32" y="0"  width="145"    height="195"/><!-- Ø14.5 bore, through -->
+            <rect x="353.82" y="0"  width="66"     height="140"/><!-- nipple bore A -->
+            <rect x="376.82" y="87" width="96.81"  height="26"/> <!-- wire slot A -->
+            <rect x="53.82"  y="0"  width="66"     height="80"/> <!-- nipple bore B -->
+            <rect x="0"      y="27" width="96.82"  height="26"/> <!-- wire slot B -->
+            <!-- the four V sheaves -->
+            <polygon points="451.63,100 473.63,78  473.63,122"/>
+            <polygon points="22.0,100   0,78       0,122"/>
+            <polygon points="451.63,40  473.63,18  473.63,62"/>
+            <polygon points="22.0,40    0,18       0,62"/>
+          </g>
+
+          <!-- horn arms lie at 45°, out of this plane: hidden outline -->
+          <g fill="none" stroke="var(--muted)" stroke-width="1.2" stroke-dasharray="7 5" opacity=".75">
+            <rect x="34.32"  y="151" width="130" height="44"/>
+            <rect x="309.32" y="151" width="130" height="44"/>
+          </g>
+
+          <!-- where the cable actually seats in the V -->
+          <g fill="var(--accent)">
+            <circle cx="459.63" cy="100" r="4.4"/>
+            <circle cx="14.0"   cy="40"  r="4.4"/>
+          </g>
+
+          <!-- overall width -->
+          <g stroke="var(--muted)" stroke-width="1.1" fill="none">
+            <line x1="0" y1="211" x2="473.63" y2="211"/>
+            <line x1="0" y1="203" x2="0" y2="219"/>
+            <line x1="473.63" y1="203" x2="473.63" y2="219"/>
+          </g>
+          <text x="236.8" y="237" text-anchor="middle" fill="var(--muted)"
+                font-family="Consolas,ui-monospace,monospace" font-size="15">Ø 47.36</text>
+
+          <!-- height -->
+          <g stroke="var(--muted)" stroke-width="1.1" fill="none">
+            <line x1="496" y1="0" x2="496" y2="195"/>
+            <line x1="488" y1="0" x2="504" y2="0"/>
+            <line x1="488" y1="195" x2="504" y2="195"/>
+          </g>
+          <text x="514" y="104" fill="var(--muted)"
+                font-family="Consolas,ui-monospace,monospace" font-size="15"
+                transform="rotate(-90 514 104)" text-anchor="middle">19.50</text>
+
+          <!-- callouts -->
+          <g font-family="Consolas,ui-monospace,monospace" font-size="15" font-weight="700"
+             text-anchor="middle" fill="#fff">
+            <g stroke="var(--accent)" stroke-width="1.4" fill="none">
+              <line x1="386" y1="-12" x2="386" y2="14"/>
+              <line x1="452" y1="132" x2="440" y2="106"/>
+              <line x1="14"  y1="-12" x2="14"  y2="14"/>
+              <line x1="236.8" y1="128" x2="236.8" y2="108"/>
+              <line x1="99"  y1="212" x2="99"  y2="186"/>
+            </g>
+            <circle cx="386" cy="-24" r="13" fill="var(--accent)"/><text x="386" y="-19">1</text>
+            <circle cx="458" cy="146" r="13" fill="var(--accent)"/><text x="458" y="151">2</text>
+            <circle cx="14"  cy="-24" r="13" fill="var(--accent)"/><text x="14"  y="-19">3</text>
+            <circle cx="236.8" cy="142" r="13" fill="var(--accent)"/><text x="236.8" y="147">4</text>
+            <circle cx="99"  cy="226" r="13" fill="var(--accent)"/><text x="99"  y="231">5</text>
+          </g>
+        </svg>
+      </div>
+
+      <ol class="key">
+        <li><b>1</b><span><em>Nipple pocket, Ø6.6.</em> Drop the barrel nipple in from the top face; it seats at groove height.</span></li>
+        <li><b>2</b><span><em>Wire slot into the lower V.</em> The wire leaves the nipple sideways. The red dot is where it seats — the V is exactly cable-width at Ø44.56, so the drum sizes itself.</span></li>
+        <li><b>3</b><span><em>Second pocket, opposite side.</em> Shallower, because it feeds the upper V.</span></li>
+        <li><b>4</b><span><em>Ø14.5 bore, straight through.</em> Same size as the horn boss. A screwdriver reaches the servo's centre screw after assembly.</span></li>
+        <li><b>5</b><span><em>Horn pocket, 4.4 deep</em> — dashed, because the arms sit at 45° and are behind this cut. Four retaining slots follow the same 45°.</span></li>
+      </ol>
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="num">03</span> Stroke sets the force</h2>
+    <p class="lede">This is the whole trade, and it is worth understanding before printing. The drum
+      diameter is fixed entirely by how far you want the cable to travel. Bigger drum, longer pull,
+      weaker pull — there is no way around it short of a stronger servo or gearing.</p>
+
+    <div class="tablewrap">
+      <table>
+        <thead>
+          <tr><th>Stroke per cable</th><th>Drum Ø</th><th>Total pull</th><th>Per cable</th><th>Verdict</th></tr>
+        </thead>
+        <tbody>
+          <tr class="flag">
+            <td class="n">70 mm</td><td class="n">44.56</td><td class="n">13.5 kg</td><td class="n">6.7 kg</td>
+            <td>Chosen. Enough for a handlebar lever, not a caliper.</td>
+          </tr>
+          <tr><td class="n">40 mm</td><td class="n">25.46</td><td class="n">23.6 kg</td><td class="n">11.8 kg</td><td>Comfortable margin.</td></tr>
+          <tr><td class="n">20 mm</td><td class="n">12.73</td><td class="n">47.1 kg</td><td class="n">23.6 kg</td><td>Drives a caliper directly.</td></tr>
+          <tr><td class="n">10 mm</td><td class="n">6.37</td><td class="n">94.2 kg</td><td class="n">47.1 kg</td><td>Drum too small to build around the horn.</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="note">
+      <p class="hd">If it turns out weak</p>
+      <p>Change one number. Halving <code>STROKE</code> in the <code>.scad</code> halves the drum and
+        doubles the pull. Nothing else in the model needs touching — every dimension is derived from it.</p>
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="num">04</span> Assembly order</h2>
+    <p class="lede">The order matters: the horn has to be on the servo before the drum goes over it,
+      and the cables load last.</p>
+    <ol class="steps">
+      <li><strong>Print the fit coupon and check it on your horn.</strong>
+        <p>Five minutes. It should push on snug with no rotational play — slop here becomes brake slop later. If it is wrong, measure the horn and correct the four dimensions at the top of the <code>.scad</code>.</p></li>
+      <li><strong>Screw the stock star horn onto the servo.</strong>
+        <p>Its factory centre screw, normal torque. This is the joint that carries all 30 kg·cm.</p></li>
+      <li><strong>Drop the drum over the horn.</strong>
+        <p>The star pocket underneath swallows it. The pocket is rotated 45° from the nipple bores so nothing collides.</p></li>
+      <li><strong>Retain it with M3 screws through the top slots.</strong>
+        <p>Two is enough, four is better. The slots run r = 8…19 mm, so whichever holes your horn has will line up with something.</p></li>
+      <li><strong>Load the two cables.</strong>
+        <p>Nipple down its hole from the top face, wire out through the side slot into its groove. Wind both the same direction.</p></li>
+    </ol>
+
+    <div class="note warn">
+      <p class="hd">Not designed yet — you still need this</p>
+      <p>The drum only pulls the inner wire. The outer housing must be anchored to the aluminum plate
+        at a fixed point, aimed tangentially at each groove level. Without those two stops the housing
+        just compresses and nothing moves.</p>
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="num">05</span> G-code, ready to run</h2>
+    <p class="lede">Sliced for the Raise3D N2 in PLA. Two different profiles: the coupon is a
+      throwaway gauge so it prints light and fast; the drum is structural, so it gets five walls and
+      55 % infill because the nipple pockets carry the whole cable load through their walls.</p>
+
+    <div class="tablewrap">
+      <table>
+        <thead>
+          <tr><th>Print</th><th>Layer</th><th>Walls</th><th>Infill</th><th>Time</th><th>PLA</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>horn_fitcheck.gcode</strong><br><span style="color:var(--muted)">fit gauge — run this first</span></td>
+            <td class="n">0.25</td><td class="n">3</td><td class="n">15 %</td><td class="n">31 m</td><td class="n">6.6 g</td>
+          </tr>
+          <tr>
+            <td><strong>servo_brake_drum.gcode</strong><br><span style="color:var(--muted)">the real part</span></td>
+            <td class="n">0.15</td><td class="n">5</td><td class="n">55 %</td><td class="n">3 h 35 m</td><td class="n">26.0 g</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="cols" style="margin-top:28px">
+      <div>
+        <h3 style="font-size:15px; letter-spacing:.06em; text-transform:uppercase; margin:0 0 12px;">Checked before handing over</h3>
+        <ul class="plain">
+          <li>Toolpaths land <strong>122–177 mm</strong> in X and Y — centred on the 300 × 300 bed, brim included</li>
+          <li>Z tops out at <strong>19.55 mm</strong>, matching the model</li>
+          <li><strong>Absolute E</strong> (M82), matching the N2's firmware</li>
+          <li><strong>No G29</strong> — your N2 is levelled by hand, a probe command would crash it</li>
+          <li><strong>No support material</strong> and no overhang warnings from the slicer</li>
+        </ul>
+      </div>
+      <div>
+        <div class="note warn" style="margin-top:0">
+          <p class="hd">Watch the first layer</p>
+          <p>The start and end G-code is generic Marlin, not Raise3D's official ideaMaker profile.
+            It homes, heats, and lays a prime line along the front edge. Stay with it for the first
+            layer the first time you run it.</p>
+        </div>
+        <div class="note warn">
+          <p class="hd">PLA caveat</p>
+          <p>PLA creeps under sustained load and softens near 55 °C. If this holds the brake applied
+            for long stretches, or lives in a closed enclosure, re-slice in PETG — same geometry.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <span>Servo TD-8130MG · ~30 kg·cm · 25T</span>
+    <span>Mesh: watertight · 1 shell</span>
+    <span>Desktop\servo_brake_drum\</span>
+  </footer>
+
+</div>

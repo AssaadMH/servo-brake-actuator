@@ -1,0 +1,5 @@
+# generated toolpaths and meshes
+*.gcode
+*.3mf
+_tmp*
+__pycache__/
