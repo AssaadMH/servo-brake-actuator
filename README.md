@@ -4,6 +4,12 @@
 
 ![Fail-Safe Servo Brake Actuator](docs/img/brake-drum.png)
 
+## Origin
+
+Built at **IRIS Systems** during a 2026 engineering internship, as part of a team working on
+the SHADOW autonomous vehicle programme. This repository covers the parts I worked on; the
+wider programme is IRIS Systems' project. Published with their agreement.
+
 ## About
 
 After the electrical hold-brake failure on SHADOW, the parking brake had to become purely mechanical. This actuator uses a TD-8130MG servo to pull two bicycle brake cables simultaneously through a printed cable drum.
@@ -41,7 +47,7 @@ Not included in this repository: 18 generated/binary file(s), 10 mesh/binary ove
 
 ## Third-party work used here
 
-Everything in this repository is my own work. It builds on the following, which are **not** mine and are used under their own licences:
+This work was done as part of a team, and it builds on the following, which are **not** ours and are used under their own licences:
 
 - **OpenSCAD** by OpenSCAD project — <https://openscad.org>
 
