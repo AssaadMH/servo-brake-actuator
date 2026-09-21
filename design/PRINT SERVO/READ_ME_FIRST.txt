@@ -11,7 +11,7 @@ STEP 1  ->  horn_fitcheck.gcode        31 min      6.6 g
    your BLACK SERVO HORN into the star pocket.
 
      snug, no wobble   -> good, go to step 2
-     loose or tight    -> STOP. Tell Claude. The pocket size
+     loose or tight    -> STOP. Adjust the pocket. Its size
                           is the one dimension that was guessed
                           (typical 25T horn: 40 mm tip-to-tip,
                           7 mm arms, 4 mm thick, 14 mm boss).
